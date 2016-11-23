@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function do_math(num1, num2, operator) {
+            var result = null;
+            if (operator === "+") {
+                result = num1 + num2;
+            }
+            else if (operator === "-") {
+                result = num1 - num2;
+            }
+            else if (operator === "*" || operator === "x" || operator === "X"){
+                result = num1 * num2;
+            }
+            else if (operator === "/") {
+                result = num1 / num2;
+            }
+            else {
+                return "invalid operator";
+            }
+            return result;
+        }
+        console.log( do_math(5,2,'*') );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
