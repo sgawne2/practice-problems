@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<head>
+    <script>
+        var myArray = ['mouse', 'cat', 'dog', 'human'];
+        function sort(string_array) {
+            for (var passes = 0; passes < string_array.length; passes++) {
+                //loop through array one time for each item
+                for (var i = 0; i < string_array.length - passes; i++) {
+                    //swap items if previous array is larger, skip one more item at end for each completed pass since it will be swapped already
+                    if (string_array[i] > string_array[i + 1]) {
+                        var temp = string_array[i + 1];
+                        string_array[i + 1] = string_array[i];
+                        string_array[i] = temp;
+                    }
+                }
+            }
+            return string_array;
+        }
+        console.log( sort(myArray) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
