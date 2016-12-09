@@ -2,13 +2,19 @@
 <html>
 <head>
     <script>
-        var myArray = ['mouse', 'cat', 'dog', 'human'];
+        var myArray = ['cheese', 'zz', 'Z', 'cat', 'dog', 'human', 'cake'];
         function sort(string_array) {
             for (var passes = 0; passes < string_array.length; passes++) {
                 //loop through array one time for each item
-                for (var i = 0; i < string_array.length - passes; i++) {
-                    //swap items if previous array is larger, skip one more item at end for each completed pass since it will be swapped already
-                    if (string_array[i] > string_array[i + 1]) {
+                for (var i = 0; i < string_array.length-1 - passes; i++) {
+                    //swap items if previous array is larger
+                    //skip one more item at end for each completed pass since it will be swapped already (-passes)
+                    //doesn't hit the last item because there will be nothing to swap it with (-1)
+                    var first_string = string_array[i].toLowerCase();
+                    //console.log(typeof first_string);
+                    var second_string = string_array[i + 1].toLowerCase();
+                    if (first_string > second_string) {
+                        //console.log(string_array[i].toLowerCase());
                         var temp = string_array[i + 1];
                         string_array[i + 1] = string_array[i];
                         string_array[i] = temp;
