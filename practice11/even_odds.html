@@ -24,9 +24,27 @@
          */
 
         var myArray = [2,5,1,6,8,2,20,'cat',13,3];
-        function evenOdd() {
-
+        function evenOdd(array) {
+            var evens = [];
+            var odds = [];
+            for (var i = 0; i < array.length; i++) {
+                var number = array[i];
+                if ( !isNaN(number) ) {
+                    if (number % 2) {
+                        if (odds.indexOf(number) < 0) {
+                            odds.push(number);
+                        }
+                    }
+                    else {
+                        if (evens.indexOf(number) < 0) {
+                            evens.push(number);
+                        }
+                    }
+                }
+            }
+            return {"odd": odds, "even": evens};
         }
+        console.log(evenOdd(myArray));
     </script>
 </head>
 <body>
