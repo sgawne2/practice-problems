@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+<head>
+    <script>
+        var myArray = ['hello', 34, true, false, 'goodbye', 56, 12, '25', true, undefined];
+        function groupArray(array) {
+            var data_types = {};
+            var grouped_array = [];
+            var temp_array = [];
+            var type = null;
+            for(var i = 0; i < array.length; i++) {
+                type = typeof array[i];
+                data_types[type] = 0;
+            }
+            for(key in data_types) {
+                for(var j = 0; j < array.length; j++) {
+                    type = typeof array[j];
+                    if (type === key) {
+                        temp_array.push(array[j]);
+                    }
+                }
+                grouped_array.push(temp_array);
+                temp_array = [];
+            }
+            return grouped_array;
+        }
+        console.log( groupArray(myArray) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>

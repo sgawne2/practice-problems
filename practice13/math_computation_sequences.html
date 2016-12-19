@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * # math computation sequences
+
+         Given the following function call:
+         - math_sequences(2,5);
+
+         And the resulting output:
+         - ["2+5=7", "2-5=-3", "2*5=10", "2/5=0.4"];
+
+         Create a function definition that achieves the output with the given input.
+
+         <a href="http://jsbin.com/zebete/edit?html,js,console" target="_blank">Solution Set</a>
+
+
+
+         */
+        function math_sequences(num1, num2) {
+            var output = [];
+            var operators = ["+", "-", "*", "/"];
+            var operator = null;
+            var string = "";
+            for (var i=0; i < operators.length; i++) {
+                operator = operators[i];
+                switch(operator) {
+                    case "+":
+                        string =  num1 + operator + num2 + "=" + (num1 + num2);
+                        break;
+                    case "-":
+                        string = num1 + operator + num2 + "=" + (num1 - num2);
+                        break;
+                    case "*":
+                        string = num1 + operator + num2 + "=" + (num1 * num2);
+                        break;
+                    case "/":
+                        string = num1 + operator + num2 + "=" + (num1 / num2);
+                }
+                output.push(string);
+            }
+            return output;
+        }
+        console.log(math_sequences(2,5));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

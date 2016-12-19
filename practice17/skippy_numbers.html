@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * # skippy_numbers
+
+         Given the following function call:
+         - skippy_numbers(2);
+
+         And the resulting output:
+         - [2,3,5,6,8,9,11,12];
+
+         Create a function definition that achieves the output with the given input.
+
+         <a href="http://jsbin.com/vacogo/edit?html,js,output" target="_blank">Solution Set</a>
+
+
+
+         */
+        function skippy_numbers(num) {
+            var output = [];
+            var skip = true;
+            var count = 0;
+            for (var i = 0; i < 8; i++) {
+                if (skip) {
+                    skip = false;
+                    count += num;
+                }
+                else {
+                    count++;
+                    skip = true;
+                }
+                output.push(count);
+            }
+            return output;
+        }
+        console.log( skippy_numbers(2) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
