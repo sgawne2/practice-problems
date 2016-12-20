@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+         # math_sequence
+
+         Given the following function call:
+         - math_sequence(2);
+
+         And the resulting output:
+         - [4, 6, 8, 10, 12, 14, 16, 18, 20, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5];
+
+         Create a function definition that achieves the output with the given input.
+
+         <a href="https://jsbin.com/xinoro/edit?html,js,console,output" target="_blank">Solution Set</a>
+
+
+
+         */
+
+        function math_sequence(num) {
+            var result = [];
+            var array_length = 18;
+            for (var i = num; i < array_length + num; i++) {
+                if (i < array_length / 2) {
+                    result.push(i * num);
+
+                } else {
+                    result.push(i / num);
+                }
+            }
+            return result;
+        }
+
+        console.log( math_sequence(2) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
