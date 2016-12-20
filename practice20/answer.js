@@ -32,9 +32,16 @@ var input_array = [5,3,2,5,1];
 
 function randomize_list(array) {
     var result = [];
-    for (var i = 0; i < array.length; ) {
-        var random_index = Math.floor(Math.random() * array.length);
-        result[random_index] = array.pop();
+    while(array.length) {
+        var random_index = Math.floor( (Math.random() * result.length));
+        console.log(result.length, random_index);
+        if (!(result[random_index])) {
+            result[random_index] = array.pop();
+        } else {
+            var temp = result[random_index];
+            result[random_index] = array.pop();
+            result[result.length] = temp;
+        }
     }
     return result;
 }
