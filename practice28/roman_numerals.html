@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+         ## Roman Numerals
+
+         Build a function takes in a number and converts it to roman numerals
+
+         #### Roman <a href="http://www.roman-numerals.org/chart100.html" target="_blank">numeral conversion:</a>
+         - Base roman digits
+         - 1 : I
+         - 5 : V
+         - 10: X
+         - 50 : L
+         - 100 : C
+         - 500: D
+         - 1000 : M
+         - Writing numbers other than base digits:
+         - larger than base digit and smaller than next base digit, concatenate them together
+         - 2 is II.  3 is III
+         - Smaller than base digit: Writen as the base digit minus whatever smaller digits come before it, so for example
+         - 4 is 5 minus 1, or IV
+         - Larger than base digit: Writen as the base digit plus whatever smaller digits after it, totally up to the number, so for example
+         - 6 is 5 plus 1, or VI
+         - 11 is 10 plus 1, or XI
+         - 56 is 50 plus 5 plus 1, or LVI
+         - 67 is 50 plus 10 plus 5 plus 2, or LXVII
+
+
+         - Write a function that takes one parameter
+         - Parameter 1 - A number
+         - The function should output an a string with the corresponding roman numerals
+         - Example:
+         - `var the_number = 62;`
+         - `romanNumerals(the_number);`
+         - Returns - `LXIIV`
+
+           I II III      1
+
+        IV
+        V VI VII VIII 5 | -1
+        IX
+        X XX XXX      10 | -1
+
+        XL
+        L LX LXX LXXX 50 | -10
+        XC
+        C CC CCC      100 | -10
+
+        CD
+        D DC DCC DCCC 500 | -100
+        CM
+        M MM MMM      1000 | -100
+
+        MV
+        V             5000 | -1000
+         */
+
+//        function romanNumerals(num) {
+//            var numbers = [1, 5, 10, 50, 100, 500, 1000];
+//            //var numbers = [1, 4, 9, 40, 90, 400, 900];
+//            var numerals = ["I", "V", "X", "L", "C", "D", "M"];
+//            var roman = "";
+//
+//            var level = Math.floor(num / 10);
+//
+//            if (num < numbers[level + 1] - 1) {
+//                for (var i = 0; i < num; i++) {
+//                    roman += numerals[level];
+//                }
+//            }
+//            else if (num === numbers[level + 1] - 1) {
+//                roman += numerals[level] + numerals[level + 1];
+//            }
+//            else if (num === numbers[level + 2] - 1) {
+//                roman += numerals[level] + numerals[level + 2];
+//            }
+//            else {
+//                roman += numerals[level + 1];
+//                for (i = 0; i < num - numbers[level + 1]; i++) {
+//                    roman += numerals[level];
+//                }
+//            }
+//            return roman
+//        }
+
+        function romanNumerals(num) {
+            var numbers = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000,
+                4000, 5000, 9000, 10000, 40000, 50000, 90000, 100000, 400000, 500000, 900000, 1000000];
+            var numerals = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M",
+                "MV", "V", "MX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
+            var string = "";
+            var i = numbers.length-1;
+            while (i >= 0) {
+                if (num >= numbers[i]) {
+                    num -= numbers[i];
+                    console.log(num);
+                    string += numerals[i];
+                    i++;
+                } else {
+                    i--;
+                }
+            }
+            return string;
+        }
+        console.log( romanNumerals(62) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
