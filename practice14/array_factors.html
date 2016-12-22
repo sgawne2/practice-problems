@@ -28,7 +28,25 @@
          }
 
          */
+        var myArray = [4,2,8,6,3,9,-2];
 
+        function arrayFactors(array) {
+            var result = {};
+            for (var i = 0; i < array.length; i++) {
+                var temp_array = [];
+                for (var j = 0; j < array.length; j++) {
+                    var num1 = array[i];
+                    var num2 = Math.abs(array[j]);
+                    if ( !(num1 % num2) && num1 !== num2 && temp_array.indexOf(num2) === -1) {
+                        temp_array.push(array[j]);
+                    }
+                }
+                result[array[i]] = temp_array;
+            }
+            return result;
+        }
+
+        console.log( arrayFactors(myArray) );
     </script>
 </head>
 <body>
