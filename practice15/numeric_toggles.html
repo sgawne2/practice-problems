@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+         # numeric_toggles
+
+         Given the following function call:
+         - numeric_toggles(2);
+
+         And the resulting output:
+         - [4, 6, -9, -12, 16, 20, -25, -30];
+            2  2  3   3   4   4   5    5    6
+            1  1  -1  -1   1   1   -1   -1
+
+         Create a function definition that achieves the output with the given input.
+
+         <a href="http://jsbin.com/kaqona/edit?html,js,output" target="_blank">Solution Set</a>
+         */
+        function numeric_toggles(num) {
+            var result = [];
+
+            if (num > 0) {
+                var multiplier = 1;
+            } else {
+                multiplier = -1;
+            }
+
+            num = Math.abs(num);
+            var sum = num;
+            var number_to_add = num;
+
+            for (var i = 0; i < num * 4; i++) {
+                sum += number_to_add;
+                result.push(sum * multiplier);
+
+                if ( !( (i + 1) % num ) ) {
+                    number_to_add++;
+                    multiplier = multiplier * -1;
+                }
+
+            }
+
+            return result;
+        }
+        console.log( numeric_toggles(2) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
