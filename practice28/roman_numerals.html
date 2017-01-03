@@ -95,18 +95,10 @@
                 4000, 5000, 9000, 10000, 40000, 50000, 90000, 100000, 400000, 500000, 900000, 1000000];
             var numerals = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M",
                 "MV", "V", "MX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
-//            var numbers = [1, 5, 10, 50, 100, 500, 1000];
-//            var numerals = ["I", "V", "X", "L", "C", "D", "M"];
-//            var roman_numerals = [ [1, "I"], [5, "V"], [10, "X"], [50, "L"], [100, "C"], [500, "D"], [1000, "M"] ];
             var string = "";
             var i = numbers.length-1;
             while (i >= 0) {
-//                if (num === (numbers[i] - (numbers[i] / 10))) {
-//                    console.log('test', i);
-//                    num -= numbers[i];
-//                    string += numerals[i - 2] + numerals[i];
-//                }
-//                else
+
                 if (num >= numbers[i]) {
                     num -= numbers[i];
                     string += numerals[i];
