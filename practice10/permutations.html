@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+         permutations
+
+         Given the following function call:
+
+         permutations('abc');
+         And the resulting output:
+
+         ["abc", "acb", "bac", "bca", "cab", "cba"];
+         Create a function definition that achieves the output with the given input.
+
+         Solution Set
+
+
+         a      b       c       d
+       b c d  a c d   a b d   a b c
+    cd | dc
+
+
+         */
+
+        function permutations(string) {
+            var result = [];
+            for (var i = 0; i < string.length; i++) {
+                var new_str = string.charAt(i);
+                var remaining_str = string.substr(0, i) + string.substr(i + 1);
+                if (remaining_str.length >= 2) {
+                    var remaining_arr = permutations(remaining_str);
+                    for (var j = 0; j < remaining_arr.length; j++) {
+                        result.push(new_str + remaining_arr[j]);
+                    }
+                } else {
+                    result.push(new_str + remaining_str);
+                }
+            }
+            return result;
+        }
+
+        console.log( permutations('abc') );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
