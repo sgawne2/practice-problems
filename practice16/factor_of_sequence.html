@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+         factor_of_sequence
+
+         Given the following function call:
+
+         factor_of_sequence(2);
+         And the resulting output:
+
+         [0,3,0,0,6,0,0,9,0,0,12];
+         Create a function definition that achieves the output with the given input.
+
+         Solution Set
+        */
+        function factor_of_sequence(num) {
+            var result = [];
+            var factor = num + 1;
+            for (var i = num; i <= factor * 4; i++) {
+                if ( !(i % factor) ) {
+                    result.push(i);
+                } else {
+                    result.push(0);
+                }
+            }
+            return result;
+        }
+        console.log(factor_of_sequence(2));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
