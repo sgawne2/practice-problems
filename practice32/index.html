@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function find_middle_letters(string1) {
+            var isOdd = string1.length%2;
+            var middleIndex = Math.floor(string1.length/2);
+            var secondIndex = middleIndex-1;
+            if (!isOdd) {//even length
+                return "" + string1[secondIndex] + string1[middleIndex];
+            }
+            else {//odd length
+                return "" + string1[middleIndex];
+            }
+        }
+        console.log( find_middle_letters("seven") );
+        console.log( find_middle_letters("dish") );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
