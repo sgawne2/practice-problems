@@ -1,0 +1,22 @@
+<!DOCTYPE>
+<html>
+<head>
+    <script>
+        function invert_negatives(num1){
+            if ( isNaN(num1) ) {
+                num1 = false;
+            }
+            else if(num1 > 0) {
+                num1 = num1 * -1;
+            }
+            return num1;
+        }
+        console.log( invert_negatives(-5) );
+        console.log( invert_negatives(4000) );
+        console.log( invert_negatives('puppies') );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
