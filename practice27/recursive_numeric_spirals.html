@@ -30,8 +30,7 @@
              return array;
          }
         */
-
-        function fibSequence(size, current, previous, array) {
+        function fibSequence_old(size, current, previous, array) {
             if (array) {
                 console.log(array);
                 if (array.length >= size) {
@@ -46,13 +45,34 @@
                 next = previous + current;
             }
             array.push(current);
-            fibSequence(size, next, current, array);
+            fibSequence_old(size, next, current, array);
         }
 
-        fibSequence(12);
+        var cache = {};
+        function r_numeric_spiral(index) {
+            var result = index;
+            if (index > 1) {
+                if ( cache[index] ) {
+                    result = cache[index];
+                } else {
+                    result = r_numeric_spiral(index - 1) + r_numeric_spiral(index - 2);
+                    cache[index] = result;
+                }
+            }
+            return result;
+        }
+
+        function fibSequence(index) {
+            var array = [];
+            for (var i = 0; i < index; i++) {
+                array.push( r_numeric_spiral(i) );
+            }
+            return array;
+        }
+
+        console.log( fibSequence(12) );
     </script>
 </head>
 <body>
-
 </body>
 </html>
